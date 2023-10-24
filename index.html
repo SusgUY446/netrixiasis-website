@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netrixiasis Site</title>
+    <style>
+    
+    body {
+        background-color: rgb(69, 69, 149);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50vh;
+        margin: 0;
+      }
+    .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: grey;
+        color: white;
+        text-align: center;
+    }
+
+
+    .container {
+        align-self: flex-start;
+        background-color: white;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+        text-align: center;
+    }
+
+    .youtube {
+        background-color: #f44336;
+        font-size: 20px;
+        padding: 14px 40px;
+        border-radius: 8px;
+        color: black;
+        border: 2px solid black;
+    }
+
+    .discord {
+        background-color: #738adb;
+        font-size: 20px;
+        padding: 14px 40px;
+        border-radius: 8px;
+        color: black;
+        border: 2px solid black;
+    }
+
+    /*Loader*/
+    .loader {
+        position: fixed;
+         top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #333333;
+        transition: opacity 2s, visibility 2s;
+    }
+
+    .loader--hidden {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .loader::after {
+        content: "";
+        width: 75px;
+        height: 75px;
+        border: 15px solid #dddddd;
+        border-top-color: blue;
+        border-radius: 50%;
+        animation: loading 2s ease infinite;
+    }
+
+    @keyframes loading {
+        from {
+            transform: rotate(0turn);
+        }
+        to {
+            transform: rotate(1turn);
+        }
+    }
+    
+    </style>
+    <script>
+        window.addEventListener("load", () => {
+            document.querySelector(".loader").classList.add("loader--hidden");
+      
+            document.querySelector(".loader").addEventListener("transitionend", () => {
+                document.body.removeChild(querySelector(".loader"))
+            });
+      
+        });
+    </script>
+</head>
+<body>
+    <div class="loader">
+    </div>
+    <div class="container">
+        <h2>Social Media</h2>
+        <br>
+        <a href="https://www.youtube.com/@Netrixiasis" >
+            <button class="youtube">YouTube</button>
+        </a><br>
+        <a href="https://discord.gg/n84YWthGw9">
+            <button class="discord">Discord Server</button>
+        </a>
+    </div>
+    <div class="footer">
+        <p>Made by SusgUY446</p>
+    </div>
+</body>
+</html>
